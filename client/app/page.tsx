@@ -1,5 +1,4 @@
 import Image from "next/image";
-// import { useEffect } from "react";
 
 type project = {
   name: string;
@@ -8,8 +7,6 @@ type project = {
 };
 
 export default async function Home() {
-  // const [projects, setProjects] = useState({});
-  // useEffect(() => {
   const loadProjects = async () => {
     let results = await fetch("localhost:5050/api/projects").then((resp) =>
       resp.json()
@@ -18,7 +15,6 @@ export default async function Home() {
   };
 
   loadProjects();
-  // }, []);
   let results = await fetch("http://localhost:5050/api/projects").then((resp) =>
     resp.json()
   );
