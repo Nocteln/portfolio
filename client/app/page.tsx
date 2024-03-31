@@ -21,8 +21,9 @@ export default async function Home() {
   return (
     <main className="text-green-500">
       {results.map((project: project) => {
-        return project.name;
+        return <h1 key={project.name}>project.name</h1>;
       })}
+      ezhqb
     </main>
   );
 }
