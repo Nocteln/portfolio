@@ -35,9 +35,9 @@ export default function Projects() {
   }, []);
 
   return (
-    <div className="">
+    <div className="lg:max-w-[800px] md:max-w-[500px] max-w-[300px]">
       <Carousel>
-        <CarouselContent>
+        <CarouselContent className="flex items-center">
           {projects.map((project: Project) => {
             console.log(project);
             return (
@@ -52,6 +52,13 @@ export default function Projects() {
               </CarouselItem>
             );
           })}
+          <CarouselItem>
+            <ProjectItem
+              name="more on github"
+              description=""
+              url="https://github.com/nocteln"
+            />
+          </CarouselItem>
         </CarouselContent>
         <CarouselPrevious />
         <CarouselNext />
