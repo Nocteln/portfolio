@@ -10,7 +10,7 @@ try {
 } catch (e) {
   console.error(e);
 }
-console.log(conn);
+
 let db = conn.db("data");
 
 export default db;
