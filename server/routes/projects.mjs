@@ -7,12 +7,28 @@ const router = express.Router();
 // Get a list of 50 posts
 router.get("/", async (req, res) => {
   let collection = await db.collection("projets");
-  let results = await collection.find({})
-    .limit(50)
-    .toArray();
+  let results = await collection.find({}).limit(50).toArray();
 
   res.send(results).status(200);
 });
+
+router.post("/", async (req, res) => {
+  let collection = await db.collection("projets");
+  let newDocument = req.body;
+  newDocument.date = new Date();
+  let result = await collection.insertOne(newDocument);
+  res.send(result).status(204);
+});
+
+router.delete("/:id", async (req, res) => {
+  const query = { _id: ObjectId(req.params.id) };
+
+  const collection = db.collection("projets");
+  let result = await collection.deleteOne(query);
+
+  res.send(result).status(200);
+});
+
 // projets
 // router.get("/api/projects", async (req,res) => {
 //   let collection = await db.collection("projets")
@@ -75,3 +91,62 @@ router.get("/", async (req, res) => {
 // });
 
 export default router;
+
+/* Pour utiliser :
+
+POST :
+
+    async function test() {
+      const nouveauProjet = {
+        name: "Nouveau Projet",
+        description: "Description du nouveau projet",
+        url: "http://example.com",
+        imageUrl: "http://example.com/image.jpg",
+      };
+
+      await fetch("http://localhost:5050/api/projects", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(nouveauProjet),
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Erreur lors de l'envoi des données.");
+          }
+          // Gérer la réponse si nécessaire
+        })
+        .catch((error) => {
+          console.error("Erreur lors de la requête Fetch:", error);
+        });
+    }
+
+    test();
+    
+
+    DELETE :
+      async function test() {
+      try {
+        let resp = await fetch(
+          "http://localhost:5050/api/projects/660998740567e73f71919ec8",
+          {
+            method: "DELETE",
+          }
+        );
+
+        if (!resp.ok) {
+          // Si la réponse n'est pas OK, lancer une erreur avec le statut de la réponse
+          throw new Error(`Erreur ${resp.status} - ${resp.statusText}`);
+        }
+      } catch (error) {
+        // Gérer l'erreur de manière appropriée, par exemple, afficher un message à l'utilisateur
+        console.error("Erreur lors de la suppression du projet:", error);
+      }
+    }
+
+    test()
+    
+    
+    */
