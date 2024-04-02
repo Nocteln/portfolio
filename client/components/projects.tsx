@@ -25,7 +25,7 @@ export default function Projects() {
 
   useEffect(() => {
     async function loadProjects() {
-      let res = await fetch("http://localhost:5050/api/projects").then((res) =>
+      let res = await fetch("http://nocteln.fr:5050/api/projects").then((res) =>
         res.json()
       );
       setProjects(res);
@@ -41,7 +41,10 @@ export default function Projects() {
           {projects.map((project: Project) => {
             console.log(project);
             return (
-              <CarouselItem className="md:basis-1/1 lg:basis-1/2">
+              <CarouselItem
+                key={project._id}
+                className="md:basis-1/1 lg:basis-1/2"
+              >
                 <ProjectItem
                   name={project.name}
                   description={project.description}

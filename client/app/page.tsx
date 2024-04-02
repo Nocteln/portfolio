@@ -8,15 +8,15 @@ type project = {
 
 export default async function Home() {
   const loadProjects = async () => {
-    let results = await fetch("localhost:5050/api/projects").then((resp) =>
-      resp.json()
+    let results = await fetch("http://nocteln.fr:5050/api/projects").then(
+      (resp) => resp.json()
     );
     console.log(results);
   };
 
   loadProjects();
-  let results = await fetch("http://localhost:5050/api/projects").then((resp) =>
-    resp.json()
+  let results = await fetch("http://nocteln.fr:5050/api/projects").then(
+    (resp) => resp.json()
   );
   return (
     <main className="text-green-500">
