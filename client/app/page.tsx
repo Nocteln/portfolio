@@ -1,4 +1,8 @@
 import Image from "next/image";
+import Header from "@/components/header";
+import Projects from "@/components/projects";
+import { Button } from "@/components/ui/button";
+import About from "@/components/about";
 
 type project = {
   name: string;
@@ -7,23 +11,11 @@ type project = {
 };
 
 export default async function Home() {
-  const loadProjects = async () => {
-    let results = await fetch("http://nocteln.fr:5050/api/projects").then(
-      (resp) => resp.json()
-    );
-    console.log(results);
-  };
-
-  loadProjects();
-  let results = await fetch("http://nocteln.fr:5050/api/projects").then(
-    (resp) => resp.json()
-  );
   return (
-    <main className="text-green-500">
-      {results.map((project: project) => {
-        return <h1 key={project.name}>project.name</h1>;
-      })}
-      ezhqb
+    <main className="flex items-center justify-center flex-col">
+      <Header />
+      <About />
+      <Projects />
     </main>
   );
 }
