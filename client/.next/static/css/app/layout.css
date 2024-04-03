@@ -504,6 +504,17 @@ video {
     font-variation-settings: "wdth" 100;
     src: url(/fonts/statif/static/OpenSans_Condensed-Regular.ttf);
   }
+
+  @font-face {
+    font-family: "pt";
+    font-weight: 700;
+    src: url(/fonts/pt/PTSans-Bold.ttf);
+  }
+
+  @font-face {
+    font-family: "oswald";
+    src: url(/fonts/oswald/Oswald-Regular.ttf);
+  }
   * {
   border-color: hsl(var(--border));
 }
@@ -923,8 +934,8 @@ video {
 .text-center {
   text-align: center;
 }
-.font-\[\'Open_Sans\'\] {
-  font-family: 'Open Sans';
+.font-\[\'pt\'\] {
+  font-family: 'pt';
 }
 .font-mono {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
@@ -952,6 +963,9 @@ video {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+.font-bold {
+  font-weight: 700;
 }
 .font-extrabold {
   font-weight: 800;

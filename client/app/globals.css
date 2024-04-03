@@ -72,6 +72,17 @@
     font-variation-settings: "wdth" 100;
     src: url(/fonts/statif/static/OpenSans_Condensed-Regular.ttf);
   }
+
+  @font-face {
+    font-family: "pt";
+    font-weight: 700;
+    src: url(/fonts/pt/PTSans-Bold.ttf);
+  }
+
+  @font-face {
+    font-family: "oswald";
+    src: url(/fonts/oswald/Oswald-Regular.ttf);
+  }
 }
 
 @layer base {
