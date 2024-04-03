@@ -11,7 +11,7 @@ const Header = () => {
   };
 
   return (
-    <div className="flex justify-center items-center bg-[#212528] m-5 max-w-[500px] rounded-lg">
+    <div className="flex justify-center items-center bg-[#212528] m-5 mt-5 max-w-[500px] rounded-lg fixed top-0 bg-opacity-70 shadow-md">
       <ul className="flex">
         {links.map((link) => {
           return (

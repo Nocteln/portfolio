@@ -13,9 +13,11 @@ type project = {
 export default async function Home() {
   return (
     <main className="flex items-center justify-center flex-col">
+      <div className="pt-[100px]" />
       <Header />
       <About />
       <Projects />
+      <div className="min-h-[500px]" />
     </main>
   );
 }

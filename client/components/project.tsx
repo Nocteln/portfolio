@@ -44,7 +44,7 @@ const ProjectItem = ({ name, description, url, imageUrl, infoUrl }: Props) => {
             </Link>
           </Button>
           {infoUrl && (
-            <Button variant="ghost">
+            <Button variant="ghost" className="rounded-b-lg">
               <Link className="lg:w-[250px]" href={infoUrl} target="_blank">
                 More infos
               </Link>
