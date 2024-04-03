@@ -39,7 +39,6 @@ export default function Projects() {
       <Carousel>
         <CarouselContent className="flex items-center">
           {projects.map((project: Project) => {
-            console.log(project);
             return (
               <CarouselItem
                 key={project._id}

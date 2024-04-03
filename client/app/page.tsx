@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import Acceuil from "@/components/acceuil";
 import Title from "@/components/title";
 import About from "@/components/about";
+import Skills from "@/components/skills";
 
 type project = {
   name: string;
@@ -21,6 +22,7 @@ export default async function Home() {
       <Title id="projects">My Projects</Title>
       <Projects />
       <Title id="skills">My skills</Title>
+      <Skills />
       <Title id="about">About me</Title>
       <About />
       <Title id="contact">Contact me</Title>
