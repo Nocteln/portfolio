@@ -17,6 +17,7 @@ const Header = () => {
           return (
             <li className=" p-4" key={link.id}>
               <Button
+                className="rounded-md"
                 onClick={() => handleClick(link.id)}
                 variant={activeSection === link.id ? "active" : "ghost"}
               >

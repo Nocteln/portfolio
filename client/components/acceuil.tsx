@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const About = () => {
+const Acceuil = () => {
   return (
     <>
       <div className=" flex justify-between m-10 p-10 bg-[#212528] rounded-xl items-center border-green-400 border-2 shadow-md shadow-green-400">
@@ -29,4 +29,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Acceuil;
