@@ -12,7 +12,7 @@ const Header = () => {
   };
 
   return (
-    <div className="flex justify-center items-center bg-[#212528] m-5 mt-5 max-w-[500px] rounded-lg fixed top-0 bg-opacity-70 shadow-md">
+    <nav className="flex justify-center items-center bg-[#212528] m-5 mt-5 max-w-[500px] rounded-lg fixed top-0 bg-opacity-70 shadow-md z-50">
       <ul className="flex">
         {links.map((link) => {
           return (
@@ -28,7 +28,7 @@ const Header = () => {
           );
         })}
       </ul>
-    </div>
+    </nav>
   );
 };
 

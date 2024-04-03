@@ -6,18 +6,18 @@ interface Link {
 
 export const links: Link[] = [
   {
-    name: "About",
-    link: "/about",
-    id: 1,
-  },
-  {
     name: "Projects",
     link: "/projects",
-    id: 2,
+    id: 1,
   },
   {
     name: "Skills",
     link: "/skills",
+    id: 2,
+  },
+  {
+    name: "About",
+    link: "/about",
     id: 3,
   },
   {
