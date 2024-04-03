@@ -496,6 +496,14 @@ video {
 
     --radius: 0.5rem;
   }
+  @font-face {
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    src: url(/fonts/statif/static/OpenSans_Condensed-Regular.ttf);
+  }
   * {
   border-color: hsl(var(--border));
 }
@@ -795,9 +803,6 @@ video {
 .rounded {
   border-radius: 0.25rem;
 }
-.rounded-2xl {
-  border-radius: 1rem;
-}
 .rounded-full {
   border-radius: 9999px;
 }
@@ -865,10 +870,6 @@ video {
 .bg-secondary {
   background-color: hsl(var(--secondary));
 }
-.bg-slate-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
-}
 .bg-slate-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(148 163 184 / var(--tw-bg-opacity));
@@ -921,6 +922,9 @@ video {
 }
 .text-center {
   text-align: center;
+}
+.font-\[\'Open_Sans\'\] {
+  font-family: 'Open Sans';
 }
 .font-mono {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
@@ -993,6 +997,10 @@ video {
 .text-secondary-foreground {
   color: hsl(var(--secondary-foreground));
 }
+.text-slate-200 {
+  --tw-text-opacity: 1;
+  color: rgb(226 232 240 / var(--tw-text-opacity));
+}
 .text-slate-300 {
   --tw-text-opacity: 1;
   color: rgb(203 213 225 / var(--tw-text-opacity));
@@ -1001,17 +1009,9 @@ video {
   --tw-text-opacity: 1;
   color: rgb(100 116 139 / var(--tw-text-opacity));
 }
-.text-slate-900 {
-  --tw-text-opacity: 1;
-  color: rgb(15 23 42 / var(--tw-text-opacity));
-}
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-.text-slate-200 {
-  --tw-text-opacity: 1;
-  color: rgb(226 232 240 / var(--tw-text-opacity));
 }
 .underline {
   text-decoration-line: underline;
@@ -1041,18 +1041,6 @@ video {
 }
 .outline {
   outline-style: solid;
-}
-.outline-\[\#212528\] {
-  outline-color: #212528;
-}
-.ring {
-  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-}
-.ring-gray-500 {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(107 114 128 / var(--tw-ring-opacity));
 }
 .ring-offset-background {
   --tw-ring-offset-color: hsl(var(--background));
@@ -1086,6 +1074,8 @@ video {
     transform: translate3d(var(--tw-exit-translate-x, 0), var(--tw-exit-translate-y, 0), 0) scale3d(var(--tw-exit-scale, 1), var(--tw-exit-scale, 1), var(--tw-exit-scale, 1)) rotate(var(--tw-exit-rotate, 0));
   }
 }
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
 .file\:border-0::file-selector-button {
   border-width: 0px;
@@ -1151,15 +1141,6 @@ video {
   text-decoration-line: underline;
 }
 
-.focus\:border-\[\#2d3236\]:focus {
-  --tw-border-opacity: 1;
-  border-color: rgb(45 50 54 / var(--tw-border-opacity));
-}
-
-.focus\:outline-\[\#2d3236\]:focus {
-  outline-color: #2d3236;
-}
-
 .focus\:ring:focus {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
@@ -1183,15 +1164,6 @@ video {
 
 .focus-visible\:ring-offset-2:focus-visible {
   --tw-ring-offset-width: 2px;
-}
-
-.active\:border-\[\#2d3236\]:active {
-  --tw-border-opacity: 1;
-  border-color: rgb(45 50 54 / var(--tw-border-opacity));
-}
-
-.active\:outline-\[\#2d3236\]:active {
-  outline-color: #2d3236;
 }
 
 .disabled\:pointer-events-none:disabled {
@@ -1239,3 +1211,4 @@ video {
     flex-basis: 50%;
   }
 }
+

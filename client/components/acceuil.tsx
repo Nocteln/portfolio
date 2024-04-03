@@ -6,7 +6,7 @@ const Acceuil = () => {
   return (
     <>
       <div className=" flex justify-between p-10 bg-[#212528] rounded-xl items-center border-green-400 border-2 shadow-md shadow-green-400">
-        <div className="text-white  max-w-[500px] p-5 text-center rounded-l-xl">
+        <div className="text-white  max-w-[500px] p-5 text-center rounded-l-xl font-['Open_Sans']">
           <h2 className="text-3xl pb-5 text-green-400">Eliott Mieze</h2>
           <p className="text-xl">
             Hey, je suis Eliott, un développeur{" "}
@@ -23,7 +23,7 @@ const Acceuil = () => {
             alt="photo de profile"
             width={200}
             height={200}
-            className="rounded-2xl  border-green-400 border-4"
+            className="rounded-full  border-green-400 border-4"
           />
         </div>
       </div>
