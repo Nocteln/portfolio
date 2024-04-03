@@ -6,6 +6,7 @@ import Acceuil from "@/components/acceuil";
 import Title from "@/components/title";
 import About from "@/components/about";
 import Skills from "@/components/skills";
+import Form from "@/components/form";
 
 type project = {
   name: string;
@@ -26,6 +27,8 @@ export default async function Home() {
       <Title id="about">About me</Title>
       <About />
       <Title id="contact">Contact me</Title>
+      <Form />
+      <Title id="footer">Footer</Title>
     </main>
   );
 }
