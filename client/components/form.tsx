@@ -56,7 +56,7 @@ const FormComponent = () => {
               <FormControl>
                 <Input
                   placeholder="Dupont"
-                  className="bg-slate-400"
+                  className="bg-[#212528] text-slate-200 border-[#212528] focus:ring"
                   {...field}
                 />
               </FormControl>
@@ -74,7 +74,7 @@ const FormComponent = () => {
                 <Input
                   placeholder="dupont@example.com"
                   {...field}
-                  className="bg-slate-200"
+                  className="bg-[#212528] text-slate-200 border-[#212528] focus:ring"
                 />
               </FormControl>
               <FormMessage />
@@ -88,7 +88,11 @@ const FormComponent = () => {
             <FormItem>
               <FormLabel className="text-green-400">Subject</FormLabel>
               <FormControl>
-                <Input placeholder="Contact" {...field} />
+                <Input
+                  placeholder="Contact"
+                  {...field}
+                  className="bg-[#212528] text-slate-200 border-[#212528] focus:ring"
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -102,13 +106,17 @@ const FormComponent = () => {
               <FormLabel className="text-green-400">Message</FormLabel>
               <FormControl>
                 {/* <Input  /> */}
-                <Textarea placeholder="I contact you for ..." {...field} />
+                <Textarea
+                  placeholder="I contact you for ..."
+                  {...field}
+                  className="bg-[#212528] text-slate-200 border-[#212528] focus:ring"
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
-        <Button variant="form" type="submit">
+        <Button variant="active" className="w-full" type="submit">
           Submit
         </Button>
       </form>
