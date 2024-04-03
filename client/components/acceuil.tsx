@@ -3,7 +3,7 @@ import Image from "next/image";
 const Acceuil = () => {
   return (
     <>
-      <div className=" flex justify-between m-10 p-10 bg-[#212528] rounded-xl items-center border-green-400 border-2 shadow-md shadow-green-400">
+      <div className=" flex justify-between p-10 bg-[#212528] rounded-xl items-center border-green-400 border-2 shadow-md shadow-green-400">
         <div className="text-white  max-w-[500px] p-5 text-center rounded-l-xl">
           <h2 className="text-3xl pb-5 text-green-400">Eliott Mieze</h2>
           <p className="text-xl">

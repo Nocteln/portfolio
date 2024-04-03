@@ -2,6 +2,7 @@
 import { links } from "@/data/data";
 import { Button } from "./ui/button";
 import { useState } from "react";
+import { redirect } from "next/navigation";
 
 const Header = () => {
   const [activeSection, setActiveSection] = useState(1);
