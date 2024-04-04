@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/form";
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogDescription,
   DialogHeader,
@@ -44,10 +45,6 @@ const AddProject = () => {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values);
-
     await fetch("http://localhost:5050/api/projects", {
       method: "POST",
       headers: {
@@ -61,6 +58,7 @@ const AddProject = () => {
           throw new Error("Erreur lors de l'envoi des données.");
         }
         // Gérer la réponse si nécessaire
+        alert("Projet ajouté!");
       })
       .catch((error) => {
         console.error("Erreur lors de la requête Fetch:", error);
@@ -165,9 +163,11 @@ const AddProject = () => {
                 </FormItem>
               )}
             />
-            <Button variant="active" className="w-full" type="submit">
-              Submit
-            </Button>
+            <DialogClose asChild>
+              <Button variant="active" className="w-full" type="submit">
+                Submit
+              </Button>
+            </DialogClose>
           </form>
         </Form>
       </DialogContent>
