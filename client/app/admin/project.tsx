@@ -16,9 +16,17 @@ type Props = {
   url: string;
   imageUrl?: string;
   infoUrl?: string;
+  onDelete: () => void;
 };
 
-const ProjectItem = ({ name, description, url, imageUrl, infoUrl }: Props) => {
+const ProjectItem = ({
+  name,
+  description,
+  url,
+  imageUrl,
+  infoUrl,
+  onDelete,
+}: Props) => {
   return (
     <div>
       <Card className="flex flex-col items-center justify-center bg-[#212528] border-[#212528]">
@@ -34,14 +42,12 @@ const ProjectItem = ({ name, description, url, imageUrl, infoUrl }: Props) => {
           </CardContent>
         )}
         <CardFooter className="flex flex-col h-[100px] items-center justify-between">
-          <Button variant="delete">
-            <Link
-              className="lg:w-[300px] text-bold text-lg  w-[150px]"
-              href={url}
-              target="_blank"
-            >
-              DELETE
-            </Link>
+          <Button
+            variant="delete"
+            className="lg:w-[300px] text-bold text-lg  w-[150px]"
+            onClick={onDelete}
+          >
+            DELETE
           </Button>
           <Button variant="ghost" className="rounded-b-lg">
             <Link className="lg:w-[250px]" href="/" target="_blank">
