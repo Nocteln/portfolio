@@ -22,6 +22,8 @@ const buttonVariants = cva(
         active:
           "text-white bg-green-400 hover:bg-green-500 hover:text-accent-foreground rounded-md",
         rounded: "rounded-full border-green-400 bg-slate-400 border-2",
+        delete:
+          "rounded-md border-red-400 bg-slate-400 border-2 bg-red-400 hover:bg-red-500 hover:text-accent-",
       },
       size: {
         default: "h-10 px-4 py-2",
