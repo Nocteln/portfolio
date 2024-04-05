@@ -37,4 +37,10 @@ router.post("/archive", async (req, res) => {
   res.send(result).status(204);
 });
 
+router.get("/archive", async (req, res) => {
+  let collection = await db.collection("messagesArchived");
+  let result = await collection.find({}).toArray();
+  res.send(result).status(200);
+});
+
 export default router;
