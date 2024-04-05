@@ -1,6 +1,7 @@
 import Title from "@/components/title";
 import Projects from "./projects";
 import Skills from "./skills";
+import MessagePage from "./messages";
 
 const AdminPage = () => {
   return (
@@ -10,6 +11,8 @@ const AdminPage = () => {
       <Projects />
       <Title>Skills</Title>
       <Skills />
+      <Title>Messages</Title>
+      <MessagePage />
     </main>
   );
 };

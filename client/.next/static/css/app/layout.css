@@ -767,6 +767,9 @@ video {
 .w-full {
   width: 100%;
 }
+.w-\[500px\] {
+  width: 500px;
+}
 .min-w-0 {
   min-width: 0px;
 }
@@ -840,6 +843,9 @@ video {
 }
 .justify-between {
   justify-content: space-between;
+}
+.justify-evenly {
+  justify-content: space-evenly;
 }
 .gap-1 {
   gap: 0.25rem;
@@ -1013,6 +1019,9 @@ video {
 }
 .pt-\[200px\] {
   padding-top: 200px;
+}
+.pt-5 {
+  padding-top: 1.25rem;
 }
 .text-center {
   text-align: center;

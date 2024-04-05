@@ -4,6 +4,7 @@ import "./loadEnvironment.mjs";
 import "express-async-errors";
 import projects from "./routes/projects.mjs";
 import skills from "./routes/skills.mjs";
+import messages from "./routes/messages.mjs";
 
 const PORT = process.env.PORT || 5050;
 const app = express();
@@ -14,6 +15,7 @@ app.use(express.json());
 // Load the /projects routes
 app.use("/api/projects", projects);
 app.use("/api/skills", skills);
+app.use("/api/messages", messages);
 
 // Global error handling
 app.use((err, _req, res, next) => {
