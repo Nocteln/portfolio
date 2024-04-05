@@ -5,24 +5,29 @@ interface Link {
 }
 
 export const links: Link[] = [
+  // {
+  //   name: "Home",
+  //   link: "#",
+  //   id: 1,
+  // },
   {
     name: "Projects",
-    link: "/projects",
-    id: 1,
-  },
-  {
-    name: "Skills",
-    link: "/skills",
+    link: "projects",
     id: 2,
   },
   {
-    name: "About",
-    link: "/about",
+    name: "Skills",
+    link: "skills",
     id: 3,
   },
   {
-    name: "Contact",
-    link: "/contact",
+    name: "About",
+    link: "about",
     id: 4,
+  },
+  {
+    name: "Contact",
+    link: "contact",
+    id: 5,
   },
 ];

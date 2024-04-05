@@ -16,7 +16,7 @@ type project = {
 
 export default async function Home() {
   return (
-    <main className="flex items-center justify-center flex-col font-['pt']">
+    <main className="flex items-center justify-center flex-col font-['pt'] ">
       <div className="pt-[200px]" />
       <Header />
       <Acceuil />

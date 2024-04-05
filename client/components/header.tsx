@@ -3,6 +3,7 @@ import { links } from "@/data/data";
 import { Button } from "./ui/button";
 import { useState } from "react";
 import { redirect } from "next/navigation";
+import Link from "next/link";
 
 const Header = () => {
   const [activeSection, setActiveSection] = useState(1);
@@ -12,18 +13,20 @@ const Header = () => {
   };
 
   return (
-    <nav className="flex justify-center items-center bg-white/5 m-5 mt-5 max-w-[500px] rounded-lg fixed top-0 bg-opacity- backdrop-blur-sm shadow-md z-50">
+    <nav className="flex justify-center items-center bg-white/5 sm:m-5 lg:max-w-[700px] sm:rounded-lg fixed backdrop-blur-sm shadow-md z-50 w-full top-0 m-0 lg:bg-red-500">
       <ul className="flex">
         {links.map((link) => {
           return (
             <li className=" p-4" key={link.id}>
-              <Button
-                className="rounded-md"
-                onClick={() => handleClick(link.id)}
-                variant={activeSection === link.id ? "active" : "ghost"}
-              >
-                {link.name}
-              </Button>
+              <Link href={`#${link.link}`}>
+                <Button
+                  className="rounded-md"
+                  onClick={() => handleClick(link.id)}
+                  variant={activeSection === link.id ? "active" : "ghost"}
+                >
+                  {link.name}
+                </Button>
+              </Link>
             </li>
           );
         })}
