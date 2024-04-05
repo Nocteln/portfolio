@@ -5,7 +5,7 @@ import Link from "next/link";
 const Acceuil = () => {
   return (
     <>
-      <div className=" flex justify-between p-10 bg-[#212528] rounded-xl items-center border-green-400 border-2 shadow-md shadow-green-400">
+      <div className=" flex justify-between p-10 bg-[#212528] rounded-xl items-center border-green-400 border-2 shadow-md shadow-green-400 max-w-[70vw]">
         <div className="text-white  max-w-[500px] p-5 text-center rounded-l-xl font-['pt'] font-bold">
           <h2 className="text-3xl pb-5 text-green-400">Eliott Mieze</h2>
           <p className="text-xl">
@@ -17,7 +17,7 @@ const Acceuil = () => {
             <span className="underline decoration-green-400">Roblox</span>!
           </p>
         </div>
-        <div className="hover:rotate-180 transition-all">
+        <div className="hover:rotate-180 transition-all hidden lg:block">
           <Image
             src="/pdp.png"
             alt="photo de profile"

@@ -13,7 +13,7 @@ const Header = () => {
   };
 
   return (
-    <nav className="flex justify-center items-center bg-white/5 sm:m-5 lg:max-w-[700px] sm:rounded-lg fixed backdrop-blur-sm shadow-md z-50 w-full top-0 m-0 lg:bg-red-500">
+    <nav className="flex justify-center items-center bg-white/5 sm:m-5 lg:max-w-[700px] sm:rounded-lg fixed backdrop-blur-sm shadow-md z-50 w-full top-0 m-0">
       <ul className="flex">
         {links.map((link) => {
           return (
