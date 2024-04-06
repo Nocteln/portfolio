@@ -4,6 +4,7 @@ import { Button } from "./ui/button";
 import { useState } from "react";
 import { redirect } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 
 const Header = () => {
   const [activeSection, setActiveSection] = useState(1);
@@ -11,7 +12,6 @@ const Header = () => {
   const handleClick = (id: number) => {
     setActiveSection(id);
   };
-
   return (
     <nav className="flex justify-center items-center bg-white/5 sm:m-5 lg:max-w-[700px] sm:rounded-lg fixed backdrop-blur-sm shadow-md z-50 w-full top-0 m-0">
       <ul className="flex">

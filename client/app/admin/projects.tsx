@@ -19,6 +19,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { UserProfile } from "@auth0/nextjs-auth0/client";
 
 type Project = {
   _id: number;
@@ -29,7 +30,11 @@ type Project = {
   infoUrl?: string;
 };
 
-export default function Projects() {
+type Props = {
+  user: UserProfile;
+};
+
+export default function Projects({ user }: Props) {
   const [projects, setProjects] = useState<Project[]>([]);
 
   useEffect(() => {
@@ -45,6 +50,8 @@ export default function Projects() {
 
   async function onDelete(id: number) {
     console.log(id);
+    console.log(user);
+    if (!user) return;
     await fetch(`http://localhost:5050/api/projects/${id}`, {
       method: "DELETE",
     }).catch((err) => alert(err));

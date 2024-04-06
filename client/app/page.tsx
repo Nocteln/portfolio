@@ -19,6 +19,12 @@ export default async function Home() {
     <main className="flex items-center justify-center flex-col font-['pt'] ">
       <div className="pt-[200px]" />
       <Header />
+      <a className="text-white text-3xl" href="/api/auth/login">
+        Login
+      </a>
+      <a className="text-white text-3xl" href="/api/auth/logout">
+        Logout
+      </a>
       <Acceuil />
       <Title id="projects">My Projects</Title>
       <Projects />
