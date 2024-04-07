@@ -15,6 +15,9 @@ router.get("/", async (req, res) => {
 router.post("/", async (req, res) => {
   let collection = await db.collection("projets");
   let newDocument = req.body;
+  const userId = req.headers["user-id"];
+
+  if (userId !== "661151b364d136a4fd354ed1") return res.status(403);
   newDocument.date = new Date();
   let result = await collection.insertOne(newDocument);
   res.send(result).status(204);
@@ -22,7 +25,9 @@ router.post("/", async (req, res) => {
 
 router.delete("/:id", async (req, res) => {
   const query = { _id: ObjectId(req.params.id) };
+  const userId = req.headers["user-id"];
 
+  if (userId !== "661151b364d136a4fd354ed1") return res.status(403);
   const collection = db.collection("projets");
   let result = await collection.deleteOne(query);
 

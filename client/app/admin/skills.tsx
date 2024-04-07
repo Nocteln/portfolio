@@ -4,15 +4,21 @@ import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardFooter } from "@/components/ui/card";
 import { useEffect, useState } from "react";
 import { ObjectId } from "mongodb";
+import { UserProfile } from "@auth0/nextjs-auth0/client";
 
 interface Skill {
   _id: number;
   name: string;
 }
 
-const Skills = () => {
-  const [skills, setSkills] = useState<Skill[]>([]);
+type Props = {
+  user: UserProfile;
+};
 
+const Skills = ({ user }: Props) => {
+  const [skills, setSkills] = useState<Skill[]>([]);
+  if (!user) return;
+  const userId: string = user && typeof user.id === "string" ? user.id : "";
   useEffect(() => {
     const loadSkills = async () => {
       let res: Skill[] = await fetch("http://nocteln.fr:5050/api/skills").then(
@@ -27,6 +33,11 @@ const Skills = () => {
     console.log(id);
     await fetch(`http://localhost:5050/api/skills/${id}`, {
       method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        // Ajouter l'ID utilisateur dans l'en-tête de la requête
+        "User-ID": userId,
+      },
     }).catch((err) => alert(err));
     setSkills(skills.filter((skill) => skill._id !== id));
   }
@@ -41,6 +52,7 @@ const Skills = () => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "User-ID": userId,
       },
       body: JSON.stringify({
         name,

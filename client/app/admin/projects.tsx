@@ -36,6 +36,22 @@ type Props = {
 
 export default function Projects({ user }: Props) {
   const [projects, setProjects] = useState<Project[]>([]);
+  if (!user) return;
+  const userId: string = user && typeof user.id === "string" ? user.id : "";
+
+  const headers: HeadersInit = {
+    "Content-Type": "application/json",
+    // Ajouter l'ID utilisateur dans l'en-tête de la requête
+    "User-ID": userId,
+  };
+
+  const requestOptions: RequestInit = {
+    method: "DELETE",
+    headers: headers,
+    body: JSON.stringify({
+      // Autres données à envoyer dans le corps de la requête si nécessaire
+    }),
+  };
 
   useEffect(() => {
     async function loadProjects() {
@@ -50,11 +66,10 @@ export default function Projects({ user }: Props) {
 
   async function onDelete(id: number) {
     console.log(id);
-    console.log(user);
-    if (!user) return;
-    await fetch(`http://localhost:5050/api/projects/${id}`, {
-      method: "DELETE",
-    }).catch((err) => alert(err));
+    await fetch(
+      `http://localhost:5050/api/projects/${id}`,
+      requestOptions
+    ).catch((err) => alert(err));
     setProjects(projects.filter((project) => project._id !== id));
   }
 
