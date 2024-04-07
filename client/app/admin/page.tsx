@@ -49,4 +49,4 @@ export default async function AdminPage() {
   );
 }
 
-export const getServerProps = withPageAuthRequired();
+// export const getServerProps = withPageAuthRequired();

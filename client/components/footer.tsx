@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="flex justify-between items-center pb-5 lg:pb-0 w-full lg:w-[30vw]">
         {social.map((social) => {
           return (
-            <Link href={social.link}>
+            <Link href={social.link} key={social.name}>
               <Image
                 src={social.icone}
                 alt={social.name}

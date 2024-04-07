@@ -36,6 +36,16 @@ type Props = {
 
 export default function Projects({ user }: Props) {
   const [projects, setProjects] = useState<Project[]>([]);
+  useEffect(() => {
+    async function loadProjects() {
+      let res = await fetch("http://nocteln.fr:5050/api/projects").then((res) =>
+        res.json()
+      );
+      setProjects(res);
+    }
+
+    loadProjects();
+  }, []);
   if (!user) return;
   const userId: string = user && typeof user.id === "string" ? user.id : "";
 
@@ -52,17 +62,6 @@ export default function Projects({ user }: Props) {
       // Autres données à envoyer dans le corps de la requête si nécessaire
     }),
   };
-
-  useEffect(() => {
-    async function loadProjects() {
-      let res = await fetch("http://nocteln.fr:5050/api/projects").then((res) =>
-        res.json()
-      );
-      setProjects(res);
-    }
-
-    loadProjects();
-  }, []);
 
   async function onDelete(id: number) {
     console.log(id);

@@ -17,8 +17,6 @@ type Props = {
 
 const Skills = ({ user }: Props) => {
   const [skills, setSkills] = useState<Skill[]>([]);
-  if (!user) return;
-  const userId: string = user && typeof user.id === "string" ? user.id : "";
   useEffect(() => {
     const loadSkills = async () => {
       let res: Skill[] = await fetch("http://nocteln.fr:5050/api/skills").then(
@@ -28,6 +26,8 @@ const Skills = ({ user }: Props) => {
     };
     loadSkills();
   }, []);
+  if (!user) return;
+  const userId: string = user && typeof user.id === "string" ? user.id : "";
 
   async function onDelete(id: number) {
     console.log(id);
