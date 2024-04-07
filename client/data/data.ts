@@ -4,6 +4,12 @@ interface Link {
   id: number;
 }
 
+interface Social {
+  name: string;
+  link: string;
+  icone: string;
+}
+
 export const links: Link[] = [
   // {
   //   name: "Home",
@@ -29,5 +35,28 @@ export const links: Link[] = [
     name: "Contact",
     link: "contact",
     id: 5,
+  },
+];
+
+export const social: Social[] = [
+  {
+    name: "Github",
+    link: "https://github.com/nocteln",
+    icone: "/github.svg",
+  },
+  {
+    name: "LinkedIn",
+    link: "https://www.linkedin.com/in/eliott-mieze-b15114232/",
+    icone: "/linkedin.svg",
+  },
+  {
+    name: "Instagram",
+    link: "https://www.instagram.com/nocteln/",
+    icone: "/instagram.svg",
+  },
+  {
+    name: "Discord",
+    link: "https://discordapp.com/users/562693590514532362",
+    icone: "/discord.svg",
   },
 ];

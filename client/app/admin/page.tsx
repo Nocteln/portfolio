@@ -32,10 +32,10 @@ export default async function AdminPage() {
 
   return (
     <main className="flex items-center justify-center flex-col font-['pt']">
-      <a className="text-white text-3xl" href="/api/auth/login">
-        Login
-      </a>
-      <a className="text-white text-3xl" href="/api/auth/logout">
+      <a
+        className="text-white text-3xl  top-10 right-10 fixed"
+        href="/api/auth/logout"
+      >
         Logout
       </a>
       <Title>Admin Page</Title>

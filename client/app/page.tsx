@@ -7,6 +7,7 @@ import Title from "@/components/title";
 import About from "@/components/about";
 import Skills from "@/components/skills";
 import Form from "@/components/form";
+import Footer from "@/components/footer";
 
 type project = {
   name: string;
@@ -19,12 +20,6 @@ export default async function Home() {
     <main className="flex items-center justify-center flex-col font-['pt'] ">
       <div className="pt-[200px]" />
       <Header />
-      <a className="text-white text-3xl" href="/api/auth/login">
-        Login
-      </a>
-      <a className="text-white text-3xl" href="/api/auth/logout">
-        Logout
-      </a>
       <Acceuil />
       <Title id="projects">My Projects</Title>
       <Projects />
@@ -34,7 +29,8 @@ export default async function Home() {
       <About />
       <Title id="contact">Contact me</Title>
       <Form />
-      <Title id="footer">Footer</Title>
+      <div className="p-[100px]" />
+      <Footer />
     </main>
   );
 }

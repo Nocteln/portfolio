@@ -67,7 +67,9 @@ const AddProject = () => {
 
   return (
     <Dialog>
-      <DialogTrigger>Open</DialogTrigger>
+      <DialogTrigger className="text-center items-center justify-center">
+        Open
+      </DialogTrigger>
       <DialogContent>
         <DialogHeader>
           <DialogTitle>Ajout d'un projet</DialogTitle>
