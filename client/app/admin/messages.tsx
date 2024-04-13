@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import MessageCard from "./messageCard";
+import { UserProfile } from "@auth0/nextjs-auth0/client";
 
 interface Message {
   _id: string;
@@ -12,14 +13,17 @@ interface Message {
     message: string;
   };
 }
-
-const MessagePage = () => {
+type Props = {
+  user: UserProfile;
+};
+const MessagePage = ({ user }: Props) => {
   const [messages, setMessages] = useState<Message[]>([]);
-
+  if (!user) return;
+  const userId: string = user && typeof user.id === "string" ? user.id : "";
   useEffect(() => {
     async function loadProjects() {
-      let res = await fetch("http://localhost:5050/api/messages").then((res) =>
-        res.json()
+      let res = await fetch("https://nocteln.fr:5050/api/messages").then(
+        (res) => res.json()
       );
       setMessages(res);
       console.log(res);
@@ -32,11 +36,12 @@ const MessagePage = () => {
     <div className="flex flex-col ">
       {messages.map((msg) => {
         async function archive() {
-          await fetch("http://localhost:5050/api/messages/archive", {
+          await fetch("https://nocteln.fr:5050/api/messages/archive", {
             method: "POST",
             headers: {
               Accept: "application/json",
               "Content-Type": "application/json",
+              "User-ID": userId,
             },
             body: JSON.stringify(msg),
           })
@@ -51,15 +56,21 @@ const MessagePage = () => {
               console.error("Erreur lors de la requête Fetch:", error);
             });
 
-          await fetch(`http://localhost:5050/api/messages/${msg._id}`, {
+          await fetch(`https://nocteln.fr:5050/api/messages/${msg._id}`, {
             method: "DELETE",
+            headers: {
+              "User-ID": userId,
+            },
           });
           setMessages(messages.filter((message) => message._id !== msg._id));
         }
 
         async function deleteMsg() {
-          await fetch(`http://localhost:5050/api/messages/${msg._id}`, {
+          await fetch(`https://nocteln.fr:5050/api/messages/${msg._id}`, {
             method: "DELETE",
+            headers: {
+              "User-ID": userId,
+            },
           });
 
           alert("message supprimé!");

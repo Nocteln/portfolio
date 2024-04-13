@@ -44,7 +44,7 @@ export default async function AdminPage() {
       <Title>Skills</Title>
       <Skills user={user} />
       <Title>Messages</Title>
-      <MessagePage />
+      <MessagePage user={user} />
     </main>
   );
 }

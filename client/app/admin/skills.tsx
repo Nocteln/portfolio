@@ -48,7 +48,7 @@ const Skills = ({ user }: Props) => {
     //@ts-ignore
     // const newObjectId = new ObjectId();
     // console.log(newObjectId);
-    await fetch("http://localhost:5050/api/skills", {
+    await fetch("https://nocteln.fr:5050/api/skills", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -102,7 +102,7 @@ export default function Projects({ user }: Props) {
                   </CardTitle>
                   <CardDescription className="text-slate-500"></CardDescription>
                 </CardHeader>
-                <AddProject />
+                <AddProject user={user} />
               </CardContent>
             </Card>
           </CarouselItem>

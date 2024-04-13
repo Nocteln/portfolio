@@ -16,7 +16,11 @@ router.post("/", async (req, res) => {
   newDocument.date = new Date();
   const userId = req.headers["user-id"];
 
-  if (userId !== "661151b364d136a4fd354ed1") return res.status(403);
+  if (
+    userId !== "661151b364d136a4fd354ed1" ||
+    userId !== "66126be891d0fed02fd82061"
+  )
+    res.status(403);
   let result = await collection.insertOne(newDocument);
   res.send(result).status(204);
 });
@@ -27,7 +31,11 @@ router.delete("/:id", async (req, res) => {
 
   const userId = req.headers["user-id"];
 
-  if (userId !== "661151b364d136a4fd354ed1") return res.status(403);
+  if (
+    userId !== "661151b364d136a4fd354ed1" ||
+    userId.id !== "66126be891d0fed02fd82061"
+  )
+    return res.status(403);
   const collection = db.collection("skills");
   console.log(collection);
   let result = await collection.deleteOne(query);

@@ -23,8 +23,13 @@ import { useForm } from "react-hook-form";
 import Image from "next/image";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { UserProfile } from "@auth0/nextjs-auth0/client";
 
-const AddProject = () => {
+type Props = {
+  user: UserProfile;
+};
+
+const AddProject = ({ user }: Props) => {
   const formSchema = z.object({
     name: z.string().min(2).max(50),
     description: z.string().min(5).max(100),
@@ -44,12 +49,16 @@ const AddProject = () => {
     },
   });
 
+  if (!user) return;
+  const userId: string = user && typeof user.id === "string" ? user.id : "";
+
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    await fetch("http://localhost:5050/api/projects", {
+    await fetch("https://nocteln.fr:5050/api/projects", {
       method: "POST",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
+        "User-ID": userId,
       },
       body: JSON.stringify(values),
     })
