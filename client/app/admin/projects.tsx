@@ -38,8 +38,8 @@ export default function Projects({ user }: Props) {
   const [projects, setProjects] = useState<Project[]>([]);
   useEffect(() => {
     async function loadProjects() {
-      let res = await fetch("http://nocteln.fr:5050/api/projects").then((res) =>
-        res.json()
+      let res = await fetch("https://nocteln.fr:5050/api/projects").then(
+        (res) => res.json()
       );
       setProjects(res);
     }
@@ -66,7 +66,7 @@ export default function Projects({ user }: Props) {
   async function onDelete(id: number) {
     console.log(id);
     await fetch(
-      `http://localhost:5050/api/projects/${id}`,
+      `https://nocteln.fr:5050/api/projects/${id}`,
       requestOptions
     ).catch((err) => alert(err));
     setProjects(projects.filter((project) => project._id !== id));

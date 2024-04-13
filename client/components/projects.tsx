@@ -25,8 +25,8 @@ export default function Projects() {
 
   useEffect(() => {
     async function loadProjects() {
-      let res = await fetch("http://nocteln.fr:5050/api/projects").then((res) =>
-        res.json()
+      let res = await fetch("https://nocteln.fr:5050/api/projects").then(
+        (res) => res.json()
       );
       setProjects(res);
     }

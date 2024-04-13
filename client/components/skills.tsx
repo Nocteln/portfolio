@@ -13,7 +13,7 @@ const Skills = () => {
 
   useEffect(() => {
     const loadSkills = async () => {
-      let res: Skill[] = await fetch("http://nocteln.fr:5050/api/skills").then(
+      let res: Skill[] = await fetch("https://nocteln.fr:5050/api/skills").then(
         (res) => res.json()
       );
       setSkills(res);

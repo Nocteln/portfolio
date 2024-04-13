@@ -19,7 +19,7 @@ const Skills = ({ user }: Props) => {
   const [skills, setSkills] = useState<Skill[]>([]);
   useEffect(() => {
     const loadSkills = async () => {
-      let res: Skill[] = await fetch("http://nocteln.fr:5050/api/skills").then(
+      let res: Skill[] = await fetch("https://nocteln.fr:5050/api/skills").then(
         (res) => res.json()
       );
       setSkills(res);
@@ -31,7 +31,7 @@ const Skills = ({ user }: Props) => {
 
   async function onDelete(id: number) {
     console.log(id);
-    await fetch(`http://localhost:5050/api/skills/${id}`, {
+    await fetch(`https://nocteln.fr:5050/api/skills/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
